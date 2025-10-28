@@ -1,0 +1,6 @@
+@Expenese.API_HostAddress = http://localhost:5125
+
+GET {{Expenese.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

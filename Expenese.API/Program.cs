@@ -1,8 +1,13 @@
+using Expenese.API.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
-
+var conn = builder.Configuration.GetConnectionString("Default");
 // Add services to the container.
-
+builder.Services.AddDbContext<AppDBContext>(opt => opt.UseSqlServer(conn));
 builder.Services.AddControllers();
+
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
